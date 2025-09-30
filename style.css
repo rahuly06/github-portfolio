@@ -32,138 +32,147 @@ nav a:hover {
     color: #fbbf24; /* gold highlight */
 }
 
-/* ABOUT SECTION */
-.about-card {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2rem;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #3b82f6;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-.about-text h2 {
-    margin-top: 0;
-    color: #1f2937;
-    font-size: 2rem;
-}
-.about-text p {
-    margin: 0.5rem 0 1rem;
-    font-size: 1.1rem;
-    color: #444;
-    line-height: 1.7;
+/* About Section */
+.about {
+  padding: 70px 20px;
+  background: #f9f9f9;
 }
 
-
-/* Skills Section */
-.skills {
-  padding: 50px 20px;
-  background: #fff;
-  text-align: center;
-}
-
-.skills h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #222;
-}
-
-/* Wrapper aligns categories in grid */
-.skills-wrapper {
+.about-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 900px;
+  grid-template-columns: 250px 1fr 1fr; /* 3 columns */
+  gap: 40px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: left;
+  align-items: start;
 }
 
-/* Category styling */
-.skill-category h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #0073e6; /* Accent */
-  font-weight: 600;
-  border-left: 3px solid #0073e6;
-  padding-left: 10px;
+/* Profile Photo */
+.about-photo img {
+  width: 100%;
+  border-radius: 50%; /* circular photo */
+  border: 4px solid #0073e6;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  object-fit: cover;
 }
 
-.skill-category p {
-  margin: 0;
+/* Text */
+.about-text h2,
+.about-skills h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #0073e6;
+}
+
+.about-text p {
   font-size: 1rem;
+  line-height: 1.7;
   color: #444;
-  line-height: 1.6;
+}
+
+/* Skills */
+.about-skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-skills li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  position: relative;
+  padding-left: 20px;
+}
+
+.about-skills li::before {
+  content: "✔";  /* skill bullet */
+  color: #0073e6;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr 1fr; /* photo + text stack */
+  }
+  .about-photo {
+    grid-column: span 2;
+    text-align: center;
+  }
+  .about-photo img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr; /* stack everything */
+    text-align: center;
+  }
+  .about-photo img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
 }
 
 
 
-/* PROJECTS SECTION */
-.projects {
-    text-align: center;
+
+
+/* Projects Section */
+.experience {
+    padding: 2rem 1rem;
 }
 
 .projects h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #1f2937;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #222;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+/* Each project row */
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
 }
 
-.project-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    text-align: left;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Left column (text) */
+.project-text h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #0073e6;
 }
 
-.project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+.project-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #444;
 }
 
-.project-card h3 {
-    margin-top: 0;
-    color: #2563eb;
-    font-size: 1.3rem;
+/* Right column (image/video) */
+.project-media img,
+.project-media video {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
 }
 
-.project-card p {
-    color: #444;
-    margin: 0.5rem 0 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
+/* Responsive */
+@media (max-width: 768px) {
+  .project {
+    grid-template-columns: 1fr; /* stack on small screens */
+  }
 }
 
-.project-card .button {
-    padding: 0.5rem 1rem;
-    background: #2563eb;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background 0.2s ease;
-}
-
-.project-card .button:hover {
-    background: #1d4ed8;
-}
 
 
 /* EXPERIENCE SECTION (TIMELINE) */

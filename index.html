@@ -24,76 +24,76 @@
 </header>
 
 <div class="container">
-    <section id="about" class="about fade-in">
-        <div class="about-card">
-            <img src="Rahul_image.jpg" alt="Rahul Yadav" class="profile-pic">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>Hi, I'm <strong>Rahul Yadav</strong>, a Master's student in <em>AI Engineering of Autonomous Systems</em>.  
-                I specialize in <strong>machine learning</strong>, <strong>computer vision</strong>, and <strong>vehicle dynamics</strong>.  
-                My passion is bridging research and real-world applications to create intelligent and robust autonomous systems.</p>
+    <section id="about" class="about">
+        <div class="about-container">
+
+            <!-- Left: Profile Photo -->
+            <div class="about-photo">
+            <img src="Rahul_image.jpg" alt="Rahul Yadav">
             </div>
+
+            <!-- Middle: About Me -->
+            <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am a Master's student in AI Engineering of Autonomous Systems with expertise in
+                machine learning, computer vision, data-driven modeling, and simulation. 
+                I enjoy applying AI to real-world use cases, from vehicle dynamics to physics-informed ML.
+                Currently, I am seeking opportunities in computer vision, machine learning, 
+                or related fields where I can contribute to innovative projects and collaborate with teams.
+            </p>
+            </div>
+
+            <!-- Right: Software Skills -->
+            <div class="about-skills">
+            <h2>Software Skills</h2>
+            <ul>
+                <li><strong>Programming & Data:</strong> Python (NumPy, Pandas, Matplotlib, Scikit-learn), C/C++</li>
+                <li><strong>AI / ML Frameworks:</strong> PyTorch, TensorFlow</li>
+                <li><strong>Deployment & Tools:</strong> FastAPI, Docker, Git & GitHub</li>
+                <li><strong>Modeling & Simulation:</strong> MATLAB, Simulink</li>
+            </ul>
+            </div>
+
         </div>
     </section>
+
+
 
     <section id="projects" class="projects fade-in">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            
-            <div class="project-card">
-                <h3>Traffic Sign Recognition (CNN + YOLOv8)</h3>
-                <p>Achieved 99%+ accuracy on GTSRB dataset. Combined YOLOv8 with CNN classification for modular real-time recognition. Dockerized FastAPI deployment for live video inference.</p>
-                <a class="button" href="https://github.com/rahuly06" target="_blank">View on GitHub</a>
-            </div>
+    <h2>Projects</h2>
 
-            <div class="project-card">
-                <h3>African Forest Animal Classifier</h3>
-                <p>Built an ML pipeline (data prep → training → deployment). Achieved 94% accuracy with transfer learning. Real-time inference deployed using FastAPI.</p>
-                <a class="button" href="https://github.com/rahuly06" target="_blank">View on GitHub</a>
+        <!-- Project 1 -->
+        <div class="project">
+            <div class="project-text">
+            <h3>Traffic Sign Recognition (CNN + YOLOv8)</h3>
+            <p>Achieved 99%+ accuracy on GTSRB dataset using a custom CNN in PyTorch.
+                Combined YOLOv8 detection with CNN classification for modular real-time recognition.
+                Deployed as a Dockerized FastAPI service with live video stream inference.</p>
+            <p><strong>Skills Used:</strong> Python, PyTorch, YOLOv8, FastAPI, Docker</p>
             </div>
-
-            <div class="project-card">
-                <h3>Robust Vehicle State Estimation</h3>
-                <p>Physics-informed ML for vehicle state prediction. Compared RNN, LSTM, Transformer architectures with OBD + ADMA sensor data.</p>
-                <a class="button" href="https://github.com/rahuly06/VSEwPIML" target="_blank">View on GitHub</a>
+            <div class="project-media">
+            <img src="images/traffic-sign.png" alt="Traffic Sign Recognition">
+            <!-- Or replace <img> with <video controls src="videos/demo.mp4"></video> -->
             </div>
-
-            <div class="project-card">
-                <h3>Q-Learning & DQN Environment</h3>
-                <p>Designed a custom OpenAI-Gym environment where an agent avoids “hell states”. Trained with Q-learning & DQN for optimal pathfinding.</p>
-                <a class="button" href="https://github.com/rahuly06/Spidy" target="_blank">View on GitHub</a>
-            </div>
-
         </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <div class="project-text">
+            <h3>African Forest Animal Classifier</h3>
+            <p>Implemented a complete ML pipeline (data prep → training → deployment).
+                Achieved 94% accuracy using transfer learning; deployed real-time inference with FastAPI.</p>
+            <p><strong>Skills Used:</strong> Python, TensorFlow, FastAPI</p>
+            </div>
+            <div class="project-media">
+            <img src="images/animal-classifier.png" alt="African Forest Animal Classifier">
+            </div>
+        </div>
+
+    <!-- Add more projects in same format -->
     </section>
 
-    <section id="skills" class="skills fade-in">
-    <h2>Software Skills</h2>
-    
-    <div class="skills-wrapper">
-        
-        <div class="skill-category">
-        <h3>Programming & Data</h3>
-        <p>Python (NumPy, Pandas, Matplotlib, Scikit-learn), C/C++</p>
-        </div>
-
-        <div class="skill-category">
-        <h3>AI / ML Frameworks</h3>
-        <p>PyTorch, TensorFlow</p>
-        </div>
-
-        <div class="skill-category">
-        <h3>Deployment & Tools</h3>
-        <p>FastAPI, Docker, Git & GitHub</p>
-        </div>
-
-        <div class="skill-category">
-        <h3>Modeling & Simulation</h3>
-        <p>MATLAB, Simulink</p>
-        </div>
-
-    </div>
-    </section>
 
     <section id="experience" class="experience fade-in">
         <h2>Experience</h2>
