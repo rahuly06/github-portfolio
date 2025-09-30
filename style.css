@@ -158,6 +158,29 @@ nav a:hover {
   color: #444;
 }
 
+/* Projects without media - side by side */
+.projects-no-media {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Individual project text box */
+.projects-no-media .project-text {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .projects-no-media {
+    grid-template-columns: 1fr; /* stack on small screens */
+  }
+}
+
+
 /* Right column (image/video) */
 .project-media img,
 .project-media video {
@@ -166,193 +189,132 @@ nav a:hover {
   display: block;
 }
 
+.project-media.small-img img {
+  width: 120px;   /* shrink width */
+  height: auto;   /* keep aspect ratio */
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .project {
-    grid-template-columns: 1fr; /* stack on small screens */
+    grid-template-columns: 2fr; /* stack on small screens */
   }
 }
 
 
 
 /* EXPERIENCE SECTION (TIMELINE) */
+/* Experience section same as Projects */
 .experience {
-    padding: 2rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .experience h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #1f2937;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #222;
 }
 
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 20px;
-    border-left: 3px solid #2563eb;
+/* Reuse .project styles for experience cards */
+.experience .project {
+  display: grid;
+  grid-template-columns: 4fr 1fr; /* text left, image right */
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
 }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-    padding-left: 30px;
+.experience-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
 }
 
-.timeline-dot {
-    position: absolute;
-    left: -10px;
-    top: 5px;
-    width: 16px;
-    height: 16px;
-    background: #2563eb;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px #dbeafe; /* soft halo */
+
+/* Publications Section */
+.publications h2,
+.education h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #222;
+}
+.publications .project {
+  display: grid;
+  grid-template-columns: 4fr 1fr; /* text left, image right */
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
 }
 
-.timeline-content {
-    background: #fff;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.timeline-content h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #2563eb;
-}
-
-.timeline-date {
-    display: block;
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0.3rem 0 0.8rem;
-}
-
-/* PUBLICATIONS SECTION */
-.publications {
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-.publications h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #1f2937;
-}
-
-.pubs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.pub-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    text-align: left;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.pub-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.pub-card h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #2563eb;
-}
-
-.pub-venue {
-    display: block;
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0.3rem 0 1rem;
-}
-
-.pub-card p {
-    color: #444;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+.pub-venue,
+.edu-school,
+.edu-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
 }
 
 .doi-badge {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    background: #2563eb;
-    color: #fff;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background 0.2s ease;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .doi-badge:hover {
-    background: #1d4ed8;
+  background: #1d4ed8;
 }
 
-/* EDUCATION SECTION */
+
+/* Education Section */
 .education {
-    text-align: center;
-    padding: 2rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .education h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #1f2937;
+  text-align: left;      /* align heading to left */
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #222;
 }
 
-.edu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
+/* Education cards reuse .project styles */
+.education .project {
+  display: grid;
+  grid-template-columns: 4fr 1fr; /* text left, image right */
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
 }
 
-.edu-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    text-align: left;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.education .project-text {
+  text-align: left;  /* make sure text is left aligned */
 }
 
-.edu-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-.edu-card h3 {
-    margin: 0;
-    color: #2563eb;
-    font-size: 1.2rem;
-}
-
-.edu-school {
-    display: block;
-    font-size: 1rem;
-    color: #444;
-    margin: 0.5rem 0;
-}
-
+.edu-school,
 .edu-date {
-    display: block;
-    font-size: 0.9rem;
-    color: #666;
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education .project {
+    grid-template-columns: 1fr; /* stack on small screens */
+  }
+}
+
 
 /* CONTACT SECTION */
 .contact {
