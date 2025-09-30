@@ -58,18 +58,19 @@
 
     <section id="projects" class="projects fade-in">
     <h2>Projects</h2>
-
         <!-- Project 1 -->
         <div class="project">
             <div class="project-text">
             <h3>Traffic Sign Recognition (CNN + YOLOv8)</h3>
-            <p>Achieved 99%+ accuracy on GTSRB dataset using a custom CNN in PyTorch.
-                Combined YOLOv8 detection with CNN classification for modular real-time recognition.
-                Deployed as a Dockerized FastAPI service with live video stream inference.</p>
-            <p><strong>Skills Used:</strong> Python, PyTorch, YOLOv8, FastAPI, Docker</p>
+                <ul>
+                    <li>Achieved 99%+ accuracy on GTSRB dataset using a custom CNN in PyTorch.</li>
+                    <li>Combined YOLOv8 detection with CNN classification for modular real-time recognition.</li>
+                    <li>Deployed as a Dockerized FastAPI service with live video stream inference.</li>
+                </ul>  
+            <p><strong>Tools:</strong> Python, PyTorch, YOLOv8, FastAPI, GIT</p>
             </div>
             <div class="project-media">
-            <video controls src="output_with_cnn.mp4"></video>
+            <img src="output_with_cnn.gif" alt="Traffic Sign Recognition">
             <!-- Or replace <img> with <video controls src="videos/demo.mp4"></video> -->
             </div>
         </div>
@@ -77,15 +78,47 @@
         <!-- Project 2 -->
         <div class="project">
             <div class="project-text">
+            <h3> Robust Vehicle State Estimation for Autonomous Driving with Physics Informed Machine Learning</h3>
+            <ul>
+                <li>Developed a vehicle state estimation framework using OBD and ADMA sensor data, sampled at different frequencies.</li>
+                <li>Implemented and compared RNN, LSTM, and Transformer-based architectures for time-series modeling of vehicle states such as velocity, acceleration, and yaw rate.</li>
+                <li>Integrated physics-based constraints into ML models to guide learning and improve generalization across diverse driving scenarios.</li>
+            </ul>  
+            <p><strong>Skills Used:</strong> Python, NumPy, Pandas, Scikit-learn, PyTorch</p>
+            </div>
+            <div class="project-media">
+            <img src="traj_60secs_1.png" alt="Trajectory Prediction">
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project">
+            <div class="project-text">
             <h3>African Forest Animal Classifier</h3>
-            <p>Implemented a complete ML pipeline (data prep → training → deployment).
-                Achieved 94% accuracy using transfer learning; deployed real-time inference with FastAPI.</p>
+            <ul>
+                <li>Created a custom dataset from the internet using a chrome extension followed by cleaning and pre-processing.</li>
+                <li>Built a CNN model using TensorFlow to classify 30 African forest animal species from images.</li>
+                <li>Deployed the model as a FastAPI web service for real-time image classification.</li>
+            </ul>
             <p><strong>Skills Used:</strong> Python, TensorFlow, FastAPI</p>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project">
+            <div class="project-text">
+            <h3>Q Learning and DQN</h3>
+            <ul>
+                <li>Developed a custom environment using OpenAI Gymnasium, the environment has an agent trying to reach goal by evading different hell states.</li>
+                <li>Used Q-learning and DQN Reinforcement learning methods to train the agent to follow most suited optimal path.</li>
+            </ul>
+            <p><strong>Skills Used:</strong> Reinforcement learning</p>
             </div>
             <div class="project-media">
             <img src="images/animal-classifier.png" alt="African Forest Animal Classifier">
             </div>
         </div>
+
 
     <!-- Add more projects in same format -->
     </section>
