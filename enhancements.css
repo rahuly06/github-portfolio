@@ -118,7 +118,6 @@
 .comparison-metrics b{font-size:.68rem;font-weight:500;white-space:nowrap}
 .comparison-metrics .fusion-best{background:#c9ff570b}
 .comparison-metrics .fusion-best span,.comparison-metrics .fusion-best b{color:var(--lime)}
-.overview-metrics{margin-top:1.25rem}
 @media(max-width:800px){.perception-head{display:block}.perception-head .tags{justify-content:flex-start;margin-top:1.2rem}.perception-overview{grid-template-columns:1fr}.stream-grid{grid-template-columns:1fr}.stream-grid figure{padding-right:0;padding-bottom:1rem}.stream-grid figure+figure{padding-left:0;padding-top:1rem;border-left:0;border-top:1px solid var(--line)}.comparison-metrics{grid-template-columns:1fr}.comparison-metrics>.threshold{justify-content:center}.comparison-metrics>div{border-left:0;border-top:1px solid var(--line)}}
 @media(max-width:600px){.perception-feature{padding:1rem}.perception-viewer .result-tabs button{font-size:.52rem}.pipeline-steps p{font-size:.7rem}.comparison-metrics>div{padding:.6rem}.comparison-metrics b{font-size:.58rem}}
 .applied-wide{align-items:center;margin-top:1.2rem}
