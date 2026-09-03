@@ -25,7 +25,9 @@
 @media(max-width:600px){.result-caption{flex-direction:column;gap:.2rem}.featured-grid{padding-top:2rem}}
 
 .perception-viewer{margin:1rem 0 1.4rem}
-.perception-viewer .result-panel img{aspect-ratio:16/9;object-fit:cover}
+.perception-viewer .result-panel img{aspect-ratio:auto;height:auto;max-height:none;object-fit:contain;background:#050705}
+#lidar-result img{width:50%;margin-inline:auto}
+@media(max-width:600px){#lidar-result img{width:50%}}
 .camera-placeholder>div:first-child{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:radial-gradient(circle at 50% 40%,#24342a,#090d0a 65%)}
 .camera-placeholder span{font-size:.62rem;color:var(--lime);letter-spacing:.12em}
 .camera-placeholder strong{font-size:1.35rem;line-height:1.2;margin:.8rem 0}
@@ -68,6 +70,62 @@
 .portrait img{-webkit-mask-image:radial-gradient(ellipse 75% 78% at 50% 42%,#000 52%,rgba(0,0,0,.8) 68%,transparent 100%);mask-image:radial-gradient(ellipse 75% 78% at 50% 42%,#000 52%,rgba(0,0,0,.8) 68%,transparent 100%);transform:scale(1.03);filter:saturate(.62) contrast(1.06)}
 .portrait span{display:none}
 .orion-logo img{width:100%;height:100%;object-fit:cover;filter:contrast(1.08) brightness(1.08)}
+
+.perception-viewer .result-tabs{grid-template-columns:.75fr 1.5fr .75fr}
+.perception-viewer .result-tabs button{padding:.7rem .35rem;font-size:.58rem}
+.fusion-metrics{display:grid;grid-template-columns:1fr 1fr;margin-top:.8rem;border:1px solid var(--line)}
+.fusion-metrics>div{display:grid;grid-template-columns:1.25fr repeat(3,1fr);align-items:center;gap:.35rem;padding:.55rem .65rem}
+.fusion-metrics>div+div{border-top:1px solid var(--line)}
+.fusion-metrics span{font-size:.52rem;color:var(--muted);letter-spacing:.08em}
+.fusion-metrics b{font-size:.62rem;font-weight:500;color:var(--paper);white-space:nowrap}
+.fusion-metrics .fusion-best{background:#c9ff570b}
+.fusion-metrics .fusion-best span,.fusion-metrics .fusion-best b{color:var(--lime)}
+@media(max-width:600px){.perception-viewer .result-tabs{grid-template-columns:.65fr 1.7fr .65fr}.perception-viewer .result-tabs button{font-size:.46rem;padding:.6rem .15rem;letter-spacing:.025em}.fusion-metrics>div{padding:.45rem .35rem;gap:.15rem}.fusion-metrics span{font-size:.43rem}.fusion-metrics b{font-size:.5rem}}
+.panel-explanation{margin:.75rem 0 0!important;color:var(--muted);font-size:.72rem!important;line-height:1.55}
+.single-metrics{display:grid;grid-template-columns:1.25fr repeat(3,1fr);align-items:center;gap:.35rem;margin-top:.7rem;padding:.55rem .65rem;border:1px solid var(--line)}
+.single-metrics span{font-size:.52rem;color:var(--muted);letter-spacing:.08em}
+.single-metrics b{font-size:.62rem;font-weight:500;color:var(--paper);white-space:nowrap}
+.single-metrics.fusion-best{background:#c9ff570b}
+.single-metrics.fusion-best span,.single-metrics.fusion-best b{color:var(--lime)}
+@media(max-width:600px){.panel-explanation{font-size:.63rem!important}.single-metrics{padding:.45rem .35rem;gap:.15rem}.single-metrics span{font-size:.43rem}.single-metrics b{font-size:.5rem}}
+
+/* Full-width perception feature */
+.perception-feature{margin:1.2rem 0;background:var(--card);border:1px solid var(--line);padding:clamp(1.3rem,3vw,2.5rem)}
+.perception-head{display:flex;justify-content:space-between;align-items:end;gap:3rem;margin-bottom:1.5rem}
+.perception-head h3{font-size:clamp(2rem,3vw,3rem);line-height:1.05;letter-spacing:-.04em;margin:.55rem 0}
+.perception-head>div>p:last-child{color:var(--muted);margin:0}
+.perception-head .tags{justify-content:flex-end;margin:0;max-width:430px}
+.perception-viewer{margin:0}
+.perception-viewer .result-tabs{grid-template-columns:1fr 1fr}
+.perception-viewer .result-tabs button{font-size:.66rem;padding:.8rem}
+.perception-overview{display:grid;grid-template-columns:.9fr 1.5fr;gap:2.5rem;align-items:center}
+.pipeline-steps{list-style:none;margin:0;padding:0}
+.pipeline-steps li{padding:1rem 0;border-bottom:1px solid var(--line)}
+.pipeline-steps li:first-child{padding-top:0}
+.pipeline-steps span{font-size:.55rem;color:var(--lime);letter-spacing:.08em}
+.pipeline-steps h4{font-size:1rem;margin:.2rem 0}
+.pipeline-steps p{font-size:.76rem;color:var(--muted);margin:0}
+.perception-overview figure,.stream-grid figure{margin:0;min-width:0}
+.perception-overview img,.stream-grid img{width:100%!important;height:auto!important;object-fit:contain!important;background:#050705}
+.perception-overview figcaption,.stream-grid figcaption{font-size:.55rem;color:var(--muted);letter-spacing:.07em;margin-top:.6rem}
+.stream-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.stream-grid figure{padding-right:1rem}
+.stream-grid figure+figure{padding-right:0;padding-left:1rem;border-left:1px solid var(--line)}
+.comparison-metrics{display:grid;grid-template-columns:1fr 1fr;margin-top:1rem;border:1px solid var(--line);align-items:stretch}
+.comparison-metrics>.threshold{display:flex;align-items:center;padding:.8rem;font-size:.56rem;color:var(--muted);letter-spacing:.05em}
+.comparison-metrics>div{display:grid;grid-template-columns:1.2fr repeat(3,1fr);align-items:center;gap:.4rem;padding:.7rem 1rem;border-left:1px solid var(--line)}
+.comparison-metrics span{font-size:.55rem;color:var(--muted)}
+.comparison-metrics b{font-size:.68rem;font-weight:500;white-space:nowrap}
+.comparison-metrics .fusion-best{background:#c9ff570b}
+.comparison-metrics .fusion-best span,.comparison-metrics .fusion-best b{color:var(--lime)}
+.overview-metrics{margin-top:1.25rem}
+@media(max-width:800px){.perception-head{display:block}.perception-head .tags{justify-content:flex-start;margin-top:1.2rem}.perception-overview{grid-template-columns:1fr}.stream-grid{grid-template-columns:1fr}.stream-grid figure{padding-right:0;padding-bottom:1rem}.stream-grid figure+figure{padding-left:0;padding-top:1rem;border-left:0;border-top:1px solid var(--line)}.comparison-metrics{grid-template-columns:1fr}.comparison-metrics>.threshold{justify-content:center}.comparison-metrics>div{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:600px){.perception-feature{padding:1rem}.perception-viewer .result-tabs button{font-size:.52rem}.pipeline-steps p{font-size:.7rem}.comparison-metrics>div{padding:.6rem}.comparison-metrics b{font-size:.58rem}}
+.applied-wide{align-items:center;margin-top:1.2rem}
+.applied-wide .scenario{width:100%;margin:0}
+.applied-wide>div:last-child{display:flex;flex-direction:column;align-self:stretch;justify-content:center}
+.applied-wide .metrics{margin-top:1.4rem}
+@media(max-width:900px){.applied-wide{align-items:stretch}.applied-wide .scenario{margin:1rem 0 1.4rem}}
 
 /* Larger hero portrait with a seamless background fade */
 .hero-visual{min-height:610px}
